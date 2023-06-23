@@ -116,6 +116,9 @@ h2 {
     background-color: #ffffff;
     padding: 0;
 }
+.top-nav h3 {
+    display: none;
+}
 .menu {
     position: absolute;
     top: 0;
@@ -162,7 +165,6 @@ h2 {
 }
 .home svg{
     padding-top: 10px;
-    padding-bottom: -10px;
 }
 #menu-toggle {
     display: none;
