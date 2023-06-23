@@ -16,12 +16,16 @@ h1, h2, h3 {
 }
 h1 {
     font-size: 40px;
+    display: none;
 }
 h2 {
     font-size: 30px;
 }
 h3 {
     font-size: 25px;
+}
+h4 {
+    width: 100px;
 }
 p, dd, li,
 nav, input {
@@ -81,9 +85,26 @@ a:link {
 }
 a {
     color: #eb5428;
+    transition: color .5s ease-in-out;
+}
+a:hover {
+    color: black;
+    transform:translateY(-5px);
+    transition: .5s ease-in-out;
 }
 .sign-in {
     color: black;
+    transition: color .5s ease-in-out;
+}
+.sign-in:hover {
+    color: #eb5428;
+}
+.sign-in svg:hover {
+    stroke: black;
+}
+svg:hover {
+    transform: rotate(360deg);
+    transition: 1s ease-in-out;
 }
 /* main NAV */
 h2 {
@@ -129,6 +150,11 @@ h2 {
     justify-content: center;
     align-items: center;
 }
+.menu-button {
+    position: absolute;
+    left: 0;
+    padding-top: 5px;
+}
 .home {
     background-color: #eb5428;
     width: 80px;
@@ -163,7 +189,7 @@ button {
 }
 input {
     border: solid 2px #eb5428;
-    height: 32.4px;
+    height: 32.5px;
 }
 input::placeholder {
     font-size: 12px;
@@ -199,6 +225,7 @@ footer small:last-of-type {
 
 
 @media (max-width: 768px) {
+    h1 {display: none;}
     .menu-button-container {
       display: flex;
       position: fixed;
@@ -229,7 +256,7 @@ footer small:last-of-type {
       transition: height .5s ease-in-out;
     }
     #menu-toggle ~ .menu li img,
-    #menu-toggle:checked ~ .menu li img {
+    #menu-toggle:checked ~ .menu li img{
         display: none;
     }
     #menu-toggle:checked ~ .menu li div,
@@ -242,12 +269,14 @@ footer small:last-of-type {
       margin: 0;
       padding:0;
       width: 100%;
-      background-color: #f2f2f2;
+      background-color: black;
+      z-index: 2;
+      
     }
     .menu a:hover {
         color: #7abfbf;
         transform: rotate(-20deg);
-        transition: .5s; 
+        transition: .5s ease-in-out; 
     }
 }
 
@@ -260,6 +289,14 @@ footer small:last-of-type {
         display: flex;
         justify-content: space-evenly;
         padding: 0;
+    }
+    h1 {
+        display: block;
+        position: fixed;
+        top: 0;
+        z-index: 1;
+        padding-left: 70px;
+        color: #ffffff;
     }
     a {
         display: flex;
@@ -306,6 +343,7 @@ footer small:last-of-type {
         flex-direction: column-reverse;
         justify-content: center;
         text-align: center;
+        padding: 20px;
     }
     footer img{
         width: 50%;
@@ -320,6 +358,7 @@ footer small:last-of-type {
         width: 768px;
         display: grid;
     }
+    h1 {display: none;}
     header h2 {
         text-align: left;
         padding-left: 20px;
@@ -351,7 +390,7 @@ footer small:last-of-type {
     }
     #directions {
         grid-column-start: 2;
-        line-height: 1.5;
+        line-height: 2;
     }
     #side-dishes menu{
         display: grid;
@@ -379,6 +418,7 @@ footer small:last-of-type {
     body {
         width: 1280px;
     }
+    
     .sign-in {
         position: relative;
         bottom: 10px;
@@ -440,5 +480,40 @@ footer small:last-of-type {
     dd {
         position: relative;
         right: 10px;
+    }
+    #side-dishes {
+        height: 460px;
+    }
+    #side-dishes menu {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+        grid-template-rows: 3fr 1fr;
+    }
+    #side-dishes p, #side-dishes svg {
+        grid-row-start: 2;
+        left: 28px;
+    }
+    #side-dishes menu img {
+        height: auto;
+        width: auto;
+        margin: 0 10px 30px 35px;
+    }
+    #side-dishes h4 {
+        top: 280px;
+        left: 35px;
+    }
+    footer img {
+        width: 200px;
+    }
+    footer div {
+        flex-direction: row-reverse;
+    }
+    footer small:first-of-type {
+        right: 220px;
+        bottom: 5px;
+    }
+    small {
+        position: relative;
+        right: 130px;
     }
 }
