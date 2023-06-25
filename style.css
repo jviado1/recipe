@@ -227,7 +227,9 @@ footer small:last-of-type {
 
 
 @media (max-width: 768px) {
-    h1 {display: none;}
+    h1 {
+        display: none;
+    }
     .menu-button-container {
       display: flex;
       position: fixed;
@@ -279,6 +281,7 @@ footer small:last-of-type {
         color: #7abfbf;
         transform: rotate(-20deg);
         transition: .5s ease-in-out; 
+        z-index: 2;
     }
 }
 
